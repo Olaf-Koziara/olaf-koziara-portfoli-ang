@@ -1,21 +1,19 @@
-import Image from "next/image"
 import clsx from "clsx"
-import profilePhoto from "../images/profile.webp"
-import signature from "../images/signature.webp"
+import profilePhoto from "../images/profile.jpg"
 import { Text, Typography } from "../ui/Elements"
-import { AnimatedH2 } from "./ui/AnimatedH2"
-import { ImageReveal } from "./ImageReveal"
 import { MotionDiv } from "../utils/lazy-ui"
+import { ImageReveal } from "./ImageReveal"
+import { AnimatedH2 } from "./ui/AnimatedH2"
 
 export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
   return (
-    <section id="about" className={clsx("border-y border-gray-200 bg-white", className)}>
+    <section id="about" className={clsx("border-y border-gray-200 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30", className)}>
       <div className="inside-container relative z-2">
         {/* HEADLINE */}
         <AnimatedH2>
           <span className="text-slate-500">About</span>
           <br />
-          Austin Serb
+          Olaf Koziara
         </AnimatedH2>
         <div className="flex flex-col-reverse gap-12 md:flex-row md:gap-16">
           {/* ---------------- left column ---------------- */}
@@ -23,7 +21,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
           <div className="flex [flex:1_0_0px] flex-col gap-6">
             {/* portrait + overlay icons */}
 
-            <ImageReveal src={profilePhoto} alt="Austin Serb" className="custom-shadow aspect-[4/4.5]" />
+            <ImageReveal src={profilePhoto} alt="Olaf Koziara" className="custom-shadow aspect-[4/4.5]" />
 
             {/* name + role */}
             <MotionDiv
@@ -32,7 +30,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             >
               <Text as="h2" size="lg" className="font-medium">
-                Austin Serb
+                Olaf Koziara
               </Text>
               <p className="text-sm text-gray-500">Full-Stack Engineer (Next.js + TypeScript)</p>
             </MotionDiv>
@@ -40,17 +38,12 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
           {/* ---------------- right column ---------------- */}
           <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-500">
             <p>
-              <strong className="font-semibold text-slate-900">I build production systems and invent tools</strong> when the platform gets in the way. I created
-              <a href="https://github.com/react-zero-ui" target="_blank" rel="noopener">
-                {" "}
-                React Zero UI
-              </a>
-              . A ~350B micro-library that updates UI by flipping data-* attributes, eliminating React re-renders for UI state. This site runs on it.
+              <strong className="font-semibold text-slate-900">I am highly driven and passionate frontend JavaScript ES6+ engineer</strong> that loves learning
+              and finding new ways to gain and share expertise, knowledge and ideas.
             </p>
 
             <p>
-              <strong className="font-semibold text-slate-900">I ship v1s in weeks and iterate in days</strong>. Leveraging tools server-first React, typed
-              APIs, background jobs, CI/CD, and observability. Small PRs, rapid feedback, no ceremony.
+              <strong className="font-semibold text-slate-900"> I am writing clean and maintainable code, and providing great user experience.</strong>
             </p>
             <p>
               <strong className="font-semibold text-slate-900">My core philosophy is simplicity</strong>. if complexity balloons, I delete it and design the
@@ -58,7 +51,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
             </p>
 
             {/* signature */}
-            <Image src={signature} alt="Austin Serb Signature" width={90} height={45} className="relative mt-6 -ml-3 -rotate-6" />
+            {/* <Image src={signature} alt="Olaf Koziara Signature" width={90} height={45} className="relative mt-6 -ml-3 -rotate-6" /> */}
           </Typography>
         </div>
       </div>

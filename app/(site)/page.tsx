@@ -1,19 +1,19 @@
+import { SITE_SLUGS } from "@/config/siteConfig"
+import { Metadata } from "next"
+import { AboutSectionV2 } from "../components/AboutSectionV2"
 import { HeroV2 } from "../components/HeroV2"
 import { ProjectsSection } from "../components/ProjectsSection"
-import { AboutSectionV2 } from "../components/AboutSectionV2"
-import { ServicesSectionV2 } from "../components/ServicesSectionV2"
 import { RecruiterContact } from "../components/RecruiterContact"
-import { Metadata } from "next"
-import { SITE_SLUGS } from "@/config/siteConfig"
+import { ServicesSectionV2 } from "../components/ServicesSectionV2"
 
 export const metadata: Metadata = {
-  title: "Web Developer Portfolio | Austin Serb | React & Next.js",
+  title: "Web Developer Portfolio | Olaf Koziara | React & Next.js",
   description:
-    "Explore the web developer portfolio of Austin Serb, a full-stack engineer building fast, modern web applications. See what a professional coding portfolio looks like, featuring projects in React, Next.js, and the custom-built React-Zero-UI library.",
+    "Explore the web developer portfolio of Olaf Koziara, a full-stack engineer building fast, modern web applications. See what a professional coding portfolio looks like, featuring projects in React, Next.js, and the custom-built React-Zero-UI library.",
 
   keywords: [
     "Web Developer Portfolio",
-    "Austin Serb",
+    "Olaf Koziara",
     "Serbyte",
     "React Zero-UI",
     "Next.js",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 
     "React Developer Portfolio",
   ],
-  authors: [{ name: "Austin Serb" }],
-  creator: "Austin Serb",
+  authors: [{ name: "Olaf Koziara" }],
+  creator: "Olaf Koziara",
   alternates: {
     canonical: SITE_SLUGS.home,
   },

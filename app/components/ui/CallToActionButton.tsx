@@ -1,9 +1,9 @@
-import Image from "next/image"
-import profilePhoto from "@/public/assets/founder.jpg"
-import clsx from "clsx"
-import type { Variants } from "motion"
 import { MotionButton, MotionDiv } from "@/app/utils/lazy-ui"
 import { SITE_NAP } from "@/config/siteConfig"
+import clsx from "clsx"
+import type { Variants } from "motion"
+import Image from "next/image"
+import profilePhoto from "../../images/profile.jpg"
 import { Icon } from "../Icon"
 
 export const CallToActionButton = () => {
@@ -60,7 +60,7 @@ export const CallToActionButton = () => {
   }
 
   return (
-    <a href={SITE_NAP.profiles.github} target="_blank" rel="noopener" aria-label="Austin Serb's GitHub">
+    <a href={SITE_NAP.profiles.github} target="_blank" rel="noopener" aria-label="Olaf Koziara's GitHub">
       <MotionButton
         initial="initial"
         animate="animate"

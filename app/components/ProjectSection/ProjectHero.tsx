@@ -1,7 +1,7 @@
+import { ProjectHeroProps } from "@/app/data/project-data"
 import { H1, Typography } from "@/app/ui/Elements"
 import Link from "next/link"
 import { Icon } from "../Icon"
-import { ProjectHeroProps } from "@/app/data/project-data"
 
 export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, description, categories, link }) => {
   return (
@@ -32,15 +32,17 @@ export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, d
           ))}
         </ul>
       </Typography>
-      <Link
-        href={link}
-        title={`View ${client} live site`}
-        target="_blank"
-        className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black"
-      >
-        View Live Site
-        <Icon name="arrow-right" className="h-3 w-3" />
-      </Link>
+      {link && (
+        <Link
+          href={link}
+          title={`View ${client} live site`}
+          target="_blank"
+          className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-black"
+        >
+          View Live Site
+          <Icon name="arrow-right" className="h-3 w-3" />
+        </Link>
+      )}
     </section>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
-import { useRef, useCallback, memo, useState, useEffect } from "react"
 import { MotionDiv } from "@/app/utils/lazy-ui"
-import { useMotionValue, useSpring, useTransform, useInView } from "motion/react"
+import { useInView, useMotionValue, useSpring, useTransform } from "motion/react"
+import { memo, useCallback, useEffect, useRef, useState } from "react"
 
 interface BeforeAfterProps {
   before: React.ReactNode
@@ -135,7 +135,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterProps> = memo(
       >
         <div
           ref={containerRef}
-          className="relative max-h-[860px] min-h-[860px] w-full rounded-xl border border-gray-200 bg-gray-300 shadow-xl"
+          className="relative max-h-[640px] min-h-[640px] w-full rounded-xl border border-gray-200 bg-gray-300 shadow-xl"
           onMouseMove={handleMouseMove}
           onMouseUp={handleEnd}
           onTouchMove={handleTouchMove}

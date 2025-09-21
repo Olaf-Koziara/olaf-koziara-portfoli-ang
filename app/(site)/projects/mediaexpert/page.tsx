@@ -1,12 +1,12 @@
 import ProjectDisplay from "@/app/components/ProjectSection/ProjectDisplay"
 import { iao } from "@/app/data/project-data"
-import { Metadata } from "next"
 import { SITE_SLUGS } from "@/config/siteConfig"
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Austin Serb - Projects Iron & Oak Seattle",
+  title: "Olaf Koziara - Projects Iron & Oak Seattle",
   description: "How I created a storytelling-focused website for Iron & Oak Seattle, achieving 4100% traffic growth and 290% increase in job applicants.",
-  keywords: ["Austin Serb", "Iron & Oak", "Seattle", "Private Security", "Next.js", "Web Design", "Storytelling", "Serbyte"],
+  keywords: ["Olaf Koziara", "Iron & Oak", "Seattle", "Private Security", "Next.js", "Web Design", "Storytelling", "Serbyte"],
   alternates: {
     canonical: SITE_SLUGS.projectLinks.iao,
   },

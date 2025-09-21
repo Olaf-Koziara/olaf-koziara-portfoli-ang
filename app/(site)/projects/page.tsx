@@ -1,15 +1,14 @@
-import React from "react"
-import { WorkHero } from "./WorkHero"
-import { ProjectsStatic } from "./ProjectsStatic"
 import { RecruiterContact } from "@/app/components/RecruiterContact"
-import { Metadata } from "next"
+import { breadcrumbSchema, projectsSchema } from "@/config/schemas"
 import { SITE_SLUGS } from "@/config/siteConfig"
-import { projectsSchema, breadcrumbSchema } from "@/config/schemas"
+import { Metadata } from "next"
+import { ProjectsStatic } from "./ProjectsStatic"
+import { WorkHero } from "./WorkHero"
 
 export const metadata: Metadata = {
-  title: "Austin Serb - Projects & Case Studies",
-  description: "Featured work by Austin Serb: production Next.js + TypeScript systems, React Zero-UI, and selected client builds. Outcomes, scope, and links.",
-  keywords: ["Austin Serb", "Projects", "Case Studies", "React Zero-UI", "Next.js", "React", "TypeScript", "Serbyte", "Seattle"],
+  title: "Olaf Koziara - Projects & Case Studies",
+  description: "Featured work by Olaf Koziara: production Next.js + TypeScript systems, React Zero-UI, and selected client builds. Outcomes, scope, and links.",
+  keywords: ["Olaf Koziara", "Projects", "Case Studies", "React Zero-UI", "Next.js", "React", "TypeScript", "Serbyte", "Seattle"],
   alternates: {
     canonical: SITE_SLUGS.projects,
   },

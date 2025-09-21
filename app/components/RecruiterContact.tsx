@@ -1,10 +1,10 @@
-import Image from "next/image"
+import profilePhoto from "@/app/images/profile.webp"
 import { H3, Text } from "@/app/ui/Elements"
 import { MotionDiv } from "@/app/utils/lazy-ui"
-import { Icon } from "./Icon"
-import profilePhoto from "@/app/images/profile.webp"
 import { SITE_NAP } from "@/config/siteConfig"
 import { Mail } from "@react-zero-ui/icon-sprite"
+import Image from "next/image"
+import { Icon } from "./Icon"
 import { BlackButtonLink } from "./ui/BlackButtonLink"
 import { WhiteButtonLink } from "./ui/WhiteButtonLink"
 
@@ -17,14 +17,14 @@ export const RecruiterContact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 100, damping: 14 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="relative z-1 mx-auto flex w-full max-w-2xl flex-col items-center gap-8 rounded-2xl border border-gray-300 bg-white p-5.5 max-lg:text-center max-sm:px-1 sm:p-8"
+          className="liquid-glass liquid-glass-hover liquid-glow relative z-1 mx-auto flex w-full max-w-2xl flex-col items-center gap-8 rounded-2xl p-5.5 max-lg:text-center max-sm:px-1 sm:p-8"
         >
           <div className="flex w-fit items-center gap-3 p-2 max-lg:justify-center">
             <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-slate-200">
-              <Image src={profilePhoto} alt="Austin Serb" fill sizes="80px" className="object-cover" />
+              <Image src={profilePhoto} alt="Olaf Koziara" fill sizes="80px" className="object-cover" />
             </div>
             <div className="flex flex-col items-start text-sm whitespace-nowrap text-slate-700">
-              <h2 className="font-medium text-slate-900">Austin Serb</h2>
+              <h2 className="font-medium text-slate-900">Olaf Koziara</h2>
               <p className="text-slate-500">Full-Stack - Frontend Focused</p>
             </div>
           </div>
@@ -37,7 +37,7 @@ export const RecruiterContact: React.FC = () => {
               <span className="text-slate-500">Let&apos;s chat.</span>
             </H3>
             <Text className="max-w-2xl text-center text-balance">
-              I build fast, accessible web apps with React, Next.js, and TypeScript. I&apos;m looking for teams that value product quality, performance, and
+              I build fast, accessible web apps with React, Node.js, and TypeScript. I&apos;m looking for teams that value product quality, performance, and
               thoughtful UX.
             </Text>
           </div>

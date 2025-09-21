@@ -1,12 +1,12 @@
 "use client"
+import { SITE_SLUGS } from "@/config/siteConfig"
+import clsx from "clsx"
 import { MotionValue } from "motion/react"
 import { StaticImageData } from "next/image"
-import { Card } from "./Card"
-import clsx from "clsx"
-import { Link } from "../../utils/Link"
 import { useRef } from "react"
 import { useCompositorSpring } from "../../hooks/useCompositorSpring"
-import { SITE_SLUGS } from "@/config/siteConfig"
+import { Link } from "../../utils/Link"
+import { Card } from "./Card"
 
 export type HeroOffset = {
   x: number
@@ -27,16 +27,17 @@ export interface AnimatedCardProps {
   progress: MotionValue<number>
   dataText?: string
   href?: string
+  target?: string
 }
 
-export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, dataText = "View Website ↗", href }: AnimatedCardProps) {
+export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, dataText = "View Website ↗", href, target }: AnimatedCardProps) {
   const ref = useRef<HTMLDivElement>(null)
   useCompositorSpring(ref, progress)
   return (
     <Link
       data-text={dataText}
       aria-label={alt}
-      target={href ? "_blank" : undefined}
+      target={target ?? (href ? "_blank" : undefined)}
       href={href ?? `${SITE_SLUGS.projects}/${gridId}`}
       data-grid-id={gridId}
       className="reveal-false:pointer-events-none"

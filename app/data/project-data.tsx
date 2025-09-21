@@ -1,18 +1,17 @@
+import heroBeforeMobile from "@/public/assets/bespoke-hero-mobile.png"
+import heroBeforeMobileIao from "@/public/assets/iron-and-oak-before-website-design-mobile.jpg"
+import heroBeforeIao from "@/public/assets/iron-and-oak-before-website-design.jpg"
 import { StaticImageData } from "next/image"
 import { TintSimulator } from "../components/BespokeTint/TintSimulator"
 import { Phase } from "../components/ProjectSection/ApproachSection"
-import heroBefore from "@/public/assets/bespoke-hero-before.png"
-import heroBeforeMobile from "@/public/assets/bespoke-hero-mobile.png"
-import heroBeforeAutomedics from "@/public/assets/automedics-before.png"
-import heroBeforeMobileAutomedics from "@/public/assets/automedics-mobile.png"
+import { ApproachTabsImage } from "../components/ProjectSection/ApproachTabsImage"
+import { LineChart } from "../components/ProjectSection/LineChart"
+import { RadialProgressRing } from "../components/ProjectSection/RadialProgressRing"
 import { AnalyticCardProps } from "../components/ProjectSection/ResultsSection"
 import { TrafficBarChart } from "../components/ProjectSection/TrafficBarChart"
-import { RadialProgressRing } from "../components/ProjectSection/RadialProgressRing"
-import { LineChart } from "../components/ProjectSection/LineChart"
+import heroBefore from "../images/gkpge_before.png"
+import heroAfter from "../images/gkpge_preview.webp"
 import { REVIEW_MAP, type ReviewProps } from "./review-data"
-import heroBeforeIao from "@/public/assets/iron-and-oak-before-website-design.jpg"
-import heroBeforeMobileIao from "@/public/assets/iron-and-oak-before-website-design-mobile.jpg"
-import { ApproachTabsImage } from "../components/ProjectSection/ApproachTabsImage"
 
 //   interface ProjectData {
 //   hero: {
@@ -45,12 +44,12 @@ export interface ProjectHeroProps {
   year: string
   description: string | React.ReactNode
   categories: string[]
-  link: string
+  link?: string
 }
 
 export type ProjectData = {
   hero: ProjectHeroProps
-  beforeAfter: {
+  beforeAfter?: {
     heroBefore: StaticImageData
     heroBeforeMobile: StaticImageData
     iframe?: string
@@ -64,37 +63,36 @@ export type ProjectData = {
   review: ReviewProps
 }
 
-export const bespoke: ProjectData = {
+export const gkpge: ProjectData = {
   hero: {
-    title: "Growing Bespoke Tint & PPF to $1m+ in Revenue",
-    client: "Bespoke Tint & PPF",
-    year: "2025",
+    title: "Created new reusable CMS theme and components for GKPGE Group",
+    client: "Grupa kapitałowa PGE",
+    year: "2021-2023",
+
     description: (
       <>
-        Bespoke Tint & PPF&apos;s site was rebuilt from the ground up into a lightning-fast, conversion-first engine, every page reverse-engineered around the
-        highest-value competitor keywords in the Bellevue auto-styling market. In under 90 days, organic{" "}
-        <span className="font-semibold">traffic increased by nearly 1,000%</span>; the shop is booking an average of{" "}
-        <span className="font-semibold">3 new paying clients per day</span>; and it&apos;s on track to surpass $1M in 2025 revenue.
+        Developed a new, modern theme and a set of reusable components for the GKPGE Group's Content Management System (CMS). The core objective was to update
+        the visual identity of the group's websites while streamlining the management and maintenance process.
       </>
     ),
-    categories: ["SEO", "Web Design", "Web Development", "Photography"],
-    link: "https://www.bespokeauto.org/",
+    categories: ["Web Design", "Web Development"],
+    link: "https://www.gkpge.pl",
   },
   beforeAfter: {
     heroBefore: heroBefore,
-    beforeAltText: "Bespoke Tint & PPF Before",
-    beforeMobileAltText: "Bespoke Tint & PPF Before Mobile",
+    beforeAltText: "GKPGE Before",
+    beforeMobileAltText: "GKPGE Before Mobile",
     heroBeforeMobile: heroBeforeMobile,
-    iframe: "/bespoke-hero.html",
-    afterAltText: "Bespoke Tint & PPF After Website Design",
+    heroAfter: heroAfter,
+    afterAltText: "GKPGE After",
   },
   results: [
     {
-      title: "Traffic Growth",
-      description: "Increase post-launch from all channels",
+      title: "Page Load Speed",
+      description: "Improvement in load times and performance",
       percentageIncrease: 966,
-      chart: <TrafficBarChart startValue={150} endValue={1450} />,
-      dataSource: "Based on 30 day traffic average",
+      chart: <TrafficBarChart startValue={8} endValue={4} />,
+      dataSource: "Measured after 30 days from launch",
     },
     {
       title: "Conversion Rate",
@@ -202,54 +200,23 @@ export const bespoke: ProjectData = {
   review: REVIEW_MAP.bespoke,
 }
 
-export const automedicsKirkland: ProjectData = {
+export const formBuilder: ProjectData = {
   hero: {
-    title: "Transforming Automedics Kirkland's Online Presence",
-    client: "Automedics Kirkland",
-    year: "2025",
+    title: "GKPGE form builder tool for internal CMS",
+    client: "PGE Systemy",
+    year: "2021-2023",
     description:
-      "I replaced Automedics Kirkland's dated brochure site with a conversion-focused, SEO-engineered Next.js platform that channels local search traffic into booked service bays and showcases 1,000+ five-star reviews.",
-    categories: ["Next.js", "Web Design", "Local SEO", "Copywriting"],
-    link: "https://www.automedicskirkland.com",
+      "I worked at PGE Systemy as a frontend developer, where I built a form builder integrated into the company’s CMS platform designed for creating websites within the corporate group. The CMS itself was based on React with TypeScript and integrated with a Symfony/Twig backend.The form builder allowed users to create dynamic forms using drag and drop components such as containers, columns, inputs, and selects. It also supported setting dependencies between fields as well as defining custom submit actions. Once a form was created, its structure was exported as JSON and processed by the Symfony backend, which generated the form layout. On the client side, the React application restored all dependencies, interactivity, and dynamic behaviors defined in the builder.",
+    categories: ["React", "TypeScript", "TWIG", "SCSS"],
   },
-  beforeAfter: {
-    heroBefore: heroBeforeAutomedics,
-    beforeAltText: "Automedics Kirkland Before",
-    beforeMobileAltText: "Automedics Kirkland Before Mobile",
-    heroBeforeMobile: heroBeforeMobileAutomedics,
-    iframe: "https://www.automedicskirkland.com",
-    afterAltText: "Automedics Kirkland After Website Design",
-  },
-  results: [
-    {
-      title: "Traffic Growth",
-      description: "Increase post-launch from all channels",
-      percentageIncrease: 960,
-      chart: <TrafficBarChart startValue={25} endValue={240} />,
-      dataSource: "Based on 30 day traffic average",
-    },
-    {
-      title: "Conversion Rate",
-      description: "Online visitor conversion improvement",
-      percentageIncrease: 85,
-      chart: <RadialProgressRing percentage={85} />,
-      dataSource: "Measured over a 60 day period",
-    },
-    {
-      title: "Revenue Growth",
-      description: "Increase post-launch",
-      percentageIncrease: 15,
-      chart: <LineChart />,
-      dataSource: "Measured over a 90 day period",
-    },
-  ],
 
   phases: [
     {
       id: 1,
-      title: "Brand Creation",
+      title: "Client Requirements Gathering",
       subtitle: "From Zero to Hero",
-      description: "Started from scratch to re-brand AutoMedics Kirkland, establishing them as the trusted automotive expert in their market.",
+      description:
+        "Initial meetings with stakeholders to understand business needs, user expectations, and technical requirements for integrating a form builder into the CMS.",
       details: [
         "Designed custom logo reflecting mechanical precision",
         "Selected color palette balancing trust and energy",
@@ -261,14 +228,14 @@ export const automedicsKirkland: ProjectData = {
     },
     {
       id: 2,
-      title: "Performance",
-      subtitle: "Sppeed That Converts",
+      title: "Architecture and Planning",
+      subtitle: "Blueprint for Success",
       description:
-        "Leveraged Next.js to create an incredibly fast website that loads instantly, keeping potential customers engaged instead of bouncing to competitors.",
+        "Planned the architecture of the form builder, including component hierarchy, state management, and integration points with the existing CMS backend.",
       details: [
-        "Server-side rendering for instant page loads",
-        "Automatic code splitting for optimal performance",
-        "Progressive web app features for mobile users",
+        "Data structure design for form components and properties",
+        "State management strategy using Zustand for efficient updates",
+        "Performance considerations for drag-and-drop interactions",
       ],
       icon: "/assets/tool-black.webp",
       feature: <ApproachTabsImage src="/assets/performance-metrics-automedics-web-development.webp" alt="Performance Metrics" />,
@@ -307,17 +274,13 @@ export const automedicsKirkland: ProjectData = {
 
 export const iao: ProjectData = {
   hero: {
-    title: (
-      <>
-        Telling the Story <br /> of Iron & Oak
-      </>
-    ),
+    title: <>Media Expert promotions landing pages</>,
     client: "Iron & Oak Seattle",
     year: "2024",
     description:
       "I dug into Iron & Oak Seattle's origin story-founded amid the COVID-19 disruptions-and rebuilt their website in Next.js around a clear, narrative-driven structure. I also scraped the web for press mentions and coverage to reinforce credibility. The goal was simple: increase qualified online applicants. It worked, driving a noticeable lift in submissions.",
-    categories: ["Next.js", "Web Design", "Web Development", "Storytelling"],
-    link: "https://iao-seattle.vercel.app/?src=serbyte",
+    categories: ["Web Design", "Web Development", "SEO", "Web Accessibility", "WCAG"],
+    link: "",
   },
   beforeAfter: {
     heroBefore: heroBeforeIao,

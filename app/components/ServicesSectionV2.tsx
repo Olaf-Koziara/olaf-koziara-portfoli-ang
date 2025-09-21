@@ -1,17 +1,17 @@
 import clsx from "clsx"
-import { Icon } from "./Icon"
-import { Text } from "../ui/Elements"
-import { AnimatedH2 } from "./ui/AnimatedH2"
 import type { Variants } from "motion"
-import { MotionUl, MotionLi } from "../utils/lazy-ui"
+import { Text } from "../ui/Elements"
+import { MotionLi, MotionUl } from "../utils/lazy-ui"
+import { Icon } from "./Icon"
+import { AnimatedH2 } from "./ui/AnimatedH2"
 
 const tech = [
   { name: "React", src: "react" },
   { name: "Next", src: "next" },
   { name: "TypeScript", src: "typescript" },
-  { name: "Python", src: "python" },
+  { name: "Node.js", src: "node" },
   { name: "Express", src: "express" },
-  { name: "OpenAI", src: "openai" },
+  { name: "Claude AI", src: "claude" },
   { name: "MongoDB", src: "mongodb" },
   { name: "PostgreSQL", src: "postgresql" },
   { name: "Figma", src: "figma" },
@@ -78,7 +78,13 @@ const element2: Variants = {
 }
 export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: string }) => {
   return (
-    <section id="technologies" className={clsx("inside-container relative z-2 items-start justify-center md:flex-row md:items-center", className)}>
+    <section
+      id="technologies"
+      className={clsx(
+        "inside-container relative z-2 items-start justify-center bg-gradient-to-br from-slate-50/80 via-white to-blue-50/40 md:flex-row md:items-center",
+        className
+      )}
+    >
       {/*  LEFT COLUMN  */}
       <div className="flex h-full flex-col gap-16 max-md:w-full md:[flex:2_0_0px]">
         <AnimatedH2>
@@ -106,12 +112,12 @@ export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: st
 
                   <label
                     htmlFor={name}
-                    className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white peer-checked:translate-y-0.5 peer-checked:shadow-none hover:translate-y-0.5"
+                    className="button-shadow glass-card flex h-13 w-13 items-center justify-center rounded-xl transition-all duration-200 peer-checked:translate-y-0.5 peer-checked:shadow-none hover:translate-y-0.5"
                   >
                     <Icon name={src} width={30} height={30} className="object-contain" />
                   </label>
                   {/* optional tooltip */}
-                  <span className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-full bg-black px-2 py-1 text-xs text-white opacity-0 transition delay-100 duration-300 group-hover:opacity-100 peer-checked:opacity-100">
+                  <span className="frosted-glass absolute -top-7 left-1/2 -translate-x-1/2 rounded-full px-2 py-1 text-xs text-slate-800 opacity-0 transition delay-100 duration-300 group-hover:opacity-100 peer-checked:opacity-100">
                     {name}
                   </span>
                 </div>

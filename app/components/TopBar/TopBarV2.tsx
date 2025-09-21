@@ -1,8 +1,8 @@
-import { Icon } from "../Icon"
-import { Link } from "../../utils/Link"
-import { MobileMenuButton } from "./MobileMenuButton"
-import { MobileMenu } from "./MobileMenu"
 import { SITE_SLUGS } from "@/config/siteConfig"
+import { Link } from "../../utils/Link"
+import { Icon } from "../Icon"
+import { MobileMenu } from "./MobileMenu"
+import { MobileMenuButton } from "./MobileMenuButton"
 
 const navItems = [
   { name: "Projects", href: SITE_SLUGS.projects },
@@ -20,7 +20,7 @@ export const TopBarV2: React.FC = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 font-medium text-nowrap">
               <Icon name="serbyte" height={24} width={24} className="rounded shadow-md" />
-              Austin Serb
+              Olaf Koziara
             </Link>
 
             {/* Desktop Navigation */}

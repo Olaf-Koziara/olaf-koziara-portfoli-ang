@@ -1,38 +1,27 @@
 export const DOMAIN_URL = "https://www.austinserb.com"
 
 export const SITE_CONFIG = {
-  title: "Austin Serb",
-  description: "Portfolio of Austin Serb, Seattle-based full-stack engineer. Specializing in Next.js, React, TypeScript, and Tailwind CSS.",
+  title: "Olaf Koziara",
+  description: "Portfolio of Olaf Koziara, Seattle-based full-stack engineer. Specializing in Next.js, React, TypeScript, and Tailwind CSS.",
   url: DOMAIN_URL ?? process.env.NEXT_PUBLIC_VERCEL_URL ?? "http://localhost:3000",
-  siteName: "Austin Serb",
-  keywords: ["Austin Serb", "Serbyte", "React Zero-UI", "Next.js", "React", "TypeScript", "Full-Stack Engineer", "Seattle"],
+  siteName: "Olaf Koziara",
+  keywords: ["Olaf Koziara", "Serbyte", "React Zero-UI", "Next.js", "React", "TypeScript", "Full-Stack Engineer", "Seattle"],
   ogImage: "/assets/bg-home-poster-optimized.webp",
   logo: "/serbyte-logo.png",
 } as const
 
 export const SITE_NAP = {
-  name: "Austin Serb",
+  name: "Olaf Koziara",
   googleBusinessType: "LocalBusiness" as const,
-  contact: "Austin Serb",
-  contactTitle: "CEO",
-  email: "austin@serbyte.net",
-  phone: "+12066596727",
-  formattedPhone: "+1 (206) 659-6727",
-  addressLink: "https://www.google.com/maps/search/?api=1&query=serbyte+development",
+  contact: "Olaf Koziara",
+  email: "olaf.koziara@gmail.com",
+  phone: "+48792344951",
+  formattedPhone: "+48 792 344 951",
   street: "12601 NE 124th ST",
-  city: "Kirkland",
-  state: "WA",
-  zipCode: "98034",
-  openingHours: [{ days: "Mon - Sat", hours: "8am - 6pm" }] as const,
-  googleReviewLink: "https://g.page/r/CXHVs1ony_76EAI/review",
+  city: "Gdańsk",
   profiles: {
-    facebook: "https://www.facebook.com/serbytedevelopment/",
-    linkedIn: "https://www.linkedin.com/in/austin-serb/",
-    yelp: "https://www.yelp.com/biz/serbyte-development-kirkland-3",
-    pinterest: "https://www.pinterest.com/serbytedevelopment",
-    gbp: "https://g.co/kgs/ay2r1wp",
-    github: "https://github.com/austin1serb",
-    x: "https://x.com/AustinSerb",
+    linkedIn: "https://www.linkedin.com/in/olaf-koziara-0b7b47164/",
+    github: "https://github.com/Olaf-Koziara",
   } as const,
   logo: "/serbyte-logo.png",
   favicon: "/favicon.ico",
@@ -41,7 +30,7 @@ export const SITE_NAP = {
 
 export const SITE_SLUGS = {
   home: "/",
-  projects: "/projects",
+  projects: "/#projects-grid",
   contact: "/#contact",
   about: "/#about-austin-serb",
   projectLinks: {
@@ -52,7 +41,7 @@ export const SITE_SLUGS = {
 } as const
 
 export const externalLinks = {
-  vetsChoice: "https://vetschoiceinsurance.com/",
+  orbitask: "https://github.com/Olaf-Koziara/orbitask-manager",
   zeroIconSprite: "https://github.com/react-zero-ui/icon-sprite",
   zeroCore: "https://github.com/react-zero-ui/core",
   entitled: "https://be-entitled.com/",

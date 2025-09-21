@@ -1,8 +1,8 @@
 import Image, { ImageProps } from "next/image"
 import { ReactElement } from "react"
-import { Socials } from "./Socials"
-import { socialLinks } from "./Footer/FooterV2"
 import { MotionDiv } from "../utils/lazy-ui"
+import { socialLinks } from "./Footer/FooterV2"
+import { Socials } from "./Socials"
 
 interface ImageRevealProps extends Omit<ImageProps, "placeholder"> {
   className?: string
@@ -35,7 +35,7 @@ export function ImageReveal({ className = "", ...img }: ImageRevealProps): React
         <Image
           {...img}
           fill
-          alt="Austin Serb Profile Photo"
+          alt="Olaf Koziara Profile Photo"
           className={`rounded-2xl object-cover saturate-125`}
           sizes="(max-width: 560px) 300px, (max-width: 768px) 500px, 50vw"
         />

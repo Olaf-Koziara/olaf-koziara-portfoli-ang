@@ -1,7 +1,7 @@
 "use client"
 
-import { type FAQ } from "./FAQTable"
 import { useScopedUI } from "@react-zero-ui/core"
+import { type FAQ } from "./FAQTable"
 
 export const SingleFAQ = ({ question, answer, index }: FAQ) => {
   const [isOpen, setIsOpen] = useScopedUI<"open" | "closed">("faq", "closed")
@@ -10,7 +10,7 @@ export const SingleFAQ = ({ question, answer, index }: FAQ) => {
     <div
       data-faq={isOpen}
       ref={setIsOpen.ref}
-      className="relative flex flex-col overflow-hidden rounded-xl border border-gray-300 bg-white text-sm hover:cursor-pointer"
+      className="glass-card relative flex flex-col overflow-hidden rounded-xl text-sm transition-all duration-300 hover:cursor-pointer hover:backdrop-blur-2xl"
       onClick={() => setIsOpen((prev) => (prev === "open" ? "closed" : "open"))}
     >
       {/* header */}

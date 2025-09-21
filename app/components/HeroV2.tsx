@@ -11,14 +11,14 @@ export const HeroV2 = () => {
           <AnimatedElement
             element="span"
             delay={0.6}
-            className="z-2 inline-flex items-center gap-2 self-start rounded-full border border-gray-100 bg-white px-3 py-2 text-xs font-medium shadow-lg"
+            className="frosted-glass z-2 inline-flex items-center gap-2 self-start rounded-full px-3 py-2 text-xs font-medium shadow-lg"
           >
             <ActivityDot /> Open to audacious work
           </AnimatedElement>
 
           <h1 className="xs:text-5xl relative z-5 text-4xl leading-[1] font-medium tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
             <AnimatedElement element="span" offsetPx={20} fadeDirection="left" className="inline-block">
-              Austin Serb
+              Olaf Koziara
             </AnimatedElement>{" "}
             <br />
             <AnimatedElement element="span" offsetPx={40} delay={0.2} fadeDirection="top" className="inline-block"></AnimatedElement>
@@ -28,14 +28,8 @@ export const HeroV2 = () => {
           </h1>
 
           <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base">
-            <strong className="font-semibold text-slate-900">Frontend-focused full stack developer.</strong> React & Next.js specialist. Creator of{" "}
-            <a href="https://github.com/react-zero-ui" target="_blank" rel="noopener" className="font-semibold text-slate-900">
-              React-Zero-UI
-            </a>
-            . Founder of{" "}
-            <a href="https://www.serbyte.net/" target="_blank" rel="noopener" className="font-semibold text-slate-900">
-              Serbyte Development
-            </a>
+            <strong className="font-semibold text-slate-900">Frontend-focused full stack developer.</strong> <br />
+            React & Next.js specialist.
           </AnimatedElement>
 
           <CallToActionButton />
@@ -45,7 +39,8 @@ export const HeroV2 = () => {
         <HeroScrollClick />
 
         {/* subtle background ellipse */}
-        <div className="pointer-events-none absolute inset-y-0 left-1/3 -z-1 hidden w-full bg-radial from-indigo-100 via-transparent to-transparent blur-3xl md:block" />
+        <div className="pointer-events-none absolute inset-y-0 left-1/3 -z-1 hidden w-full bg-radial from-indigo-100/80 via-blue-50/40 to-transparent blur-3xl md:block" />
+        <div className="pointer-events-none absolute inset-0 -z-2 bg-gradient-to-br from-white via-blue-50/20 to-indigo-50/30" />
       </div>
     </section>
   )

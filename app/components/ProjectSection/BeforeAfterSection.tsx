@@ -1,9 +1,7 @@
 "use client"
 import { BeforeAfterSliderSkeleton } from "@/app/skeletons/BeforeAfterSliderSkeleton"
-
 import dynamic from "next/dynamic"
 import Image from "next/image"
-import { HeaderText } from "@/app/ui/HeaderText"
 import { StaticImageData } from "next/image"
 
 const BeforeAfterSlider = dynamic(() => import("@/app/ui/BeforeAfterSlider").then((mod) => mod.BeforeAfterSlider), {

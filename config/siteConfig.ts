@@ -23,7 +23,7 @@ export const SITE_NAP = {
     linkedIn: "https://www.linkedin.com/in/olaf-koziara-0b7b47164/",
     github: "https://github.com/Olaf-Koziara",
   } as const,
-  logo: "/serbyte-logo.png",
+  logo: "/assets/react-icon.svg",
   favicon: "/favicon.ico",
   images: ["https://www.serbyte.net/serbyte-logo.png", "https://www.serbyte.net/assets/bg-home-poster-optimized.webp"],
 } as const
@@ -32,7 +32,7 @@ export const SITE_SLUGS = {
   home: "/",
   projects: "/#projects-grid",
   contact: "/#contact",
-  about: "/#about-austin-serb",
+  about: "/#about",
   projectLinks: {
     iao: "/projects/iron-and-oak",
     automedics: "/projects/automedics",

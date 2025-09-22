@@ -69,19 +69,8 @@ export function ProjectsGrid({ className }: { className?: string }) {
   return (
     <section id="projects-grid" className={clsx("relative scroll-mt-36", className)} ref={ref}>
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
-        <AnimatedCard
-          key={"orbitask-manager"}
-          src={orbitaskPreview}
-          alt={"Orbitask manager - Preview"}
-          offset={offsets["orbitask-manager"]}
-          gridId="orbitask-manager"
-          color="#3B06D1"
-          type=""
-          progress={progress}
-          href={externalLinks.orbitask}
-          dataText="View on GitHub"
-        />
-        <AnimatedCard
+        
+                <AnimatedCard
           key="gkpge"
           src={gkpgePreview}
           alt={"Gkpge Preview"}
@@ -94,13 +83,12 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="/projects/gkpge"
           dataText="View Case Study"
         />
-
-        <AnimatedCard
+            <AnimatedCard
           key="formBuilder"
           src={formbuilderPreview}
           alt={"FormBuilder Preview"}
           offset={offsets["formbuilder"]}
-          gridId="formBuilder"
+          gridId="formbuilder"
           color="#DA961A"
           type=""
           href="/projects/formbuilder"
@@ -108,6 +96,10 @@ export function ProjectsGrid({ className }: { className?: string }) {
           progress={progress}
           dataText="View Case Study"
         />
+   
+
+
+    
         <AnimatedCard
           key={"mediaexpert"}
           src={mediaexpertPreview}
@@ -120,6 +112,18 @@ export function ProjectsGrid({ className }: { className?: string }) {
           target="_self"
           progress={progress}
           dataText="View Case Study"
+        />
+             <AnimatedCard
+          key={"orbitask-manager"}
+          src={orbitaskPreview}
+          alt={"Orbitask manager - Preview"}
+          offset={offsets["orbitask-manager"]}
+          gridId="orbitask-manager"
+          color="#3B06D1"
+          type=""
+          progress={progress}
+          href={externalLinks.orbitask}
+          dataText="View on GitHub"
         />
       </div>
     </section>

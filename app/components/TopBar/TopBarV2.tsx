@@ -19,7 +19,7 @@ export const TopBarV2: React.FC = () => {
           <div className="flex items-center gap-4 px-4 py-3 md:gap-8 md:py-2.5">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 font-medium text-nowrap">
-              <Icon name="serbyte" height={24} width={24} className="rounded shadow-md" />
+              <Icon name="react" height={24} width={24} fill="#61dafb" className="rounded shadow-md" />
               Olaf Koziara
             </Link>
 

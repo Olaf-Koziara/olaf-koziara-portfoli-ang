@@ -1,5 +1,5 @@
 "use client"
-import formbuilderPreview from "@/app/images/formbuilder_preview.webp"
+import formbuilderPreview from "@/app/images/formbuilder.webp"
 import gkpgePreview from "@/app/images/gkpge_preview.webp"
 import mediaexpertPreview from "@/app/images/mediaexpert.png"
 import orbitaskPreview from "@/app/images/orbitask.png"
@@ -73,7 +73,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
                 <AnimatedCard
           key="gkpge"
           src={gkpgePreview}
-          alt={"Gkpge Preview"}
+          alt={"GkpgeCMS Preview"}
           offset={offsets["gkpge"]}
           gridId="gkpge"
           color="#024EFC"

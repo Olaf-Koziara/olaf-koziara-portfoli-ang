@@ -1,4 +1,4 @@
-import profilePhoto from "@/app/images/profile.webp"
+import profilePhoto from "@/app/images/profile.jpg"
 import { H3, Text } from "@/app/ui/Elements"
 import { MotionDiv } from "@/app/utils/lazy-ui"
 import { SITE_NAP } from "@/config/siteConfig"

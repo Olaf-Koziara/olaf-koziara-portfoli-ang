@@ -33,11 +33,7 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
   return (
     <section className="relative border-y border-gray-200">
       <div className="inside-container-large flex flex-col gap-12 pt-12 lg:pt-16">
-        <HeaderText
-          title="Before and after."
-          titleHighlight="See the difference."
-          description="Use the slider to see the difference between the before and after."
-        />
+   
         <BeforeAfterSlider
           initialPosition={70}
           before={

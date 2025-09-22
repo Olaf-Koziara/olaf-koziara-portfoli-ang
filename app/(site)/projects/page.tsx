@@ -1,9 +1,7 @@
-import { RecruiterContact } from "@/app/components/RecruiterContact"
-import { breadcrumbSchema, projectsSchema } from "@/config/schemas"
+
 import { SITE_SLUGS } from "@/config/siteConfig"
 import { Metadata } from "next"
-import { ProjectsStatic } from "./ProjectsStatic"
-import { WorkHero } from "./WorkHero"
+
 
 export const metadata: Metadata = {
   title: "Olaf Koziara - Projects & Case Studies",
@@ -14,19 +12,10 @@ export const metadata: Metadata = {
   },
 }
 const page = () => {
-  return (
-    <main className="relative z-1">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([projectsSchema, breadcrumbSchema]),
-        }}
-      />
-      <WorkHero />
-      <ProjectsStatic />
-      <RecruiterContact />
-    </main>
-  )
+  
+  return (<div className="overflow-hidden"></div>)
+   
+  
 }
 
 export default page

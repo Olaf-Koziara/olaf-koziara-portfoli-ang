@@ -60,9 +60,9 @@ export type ProjectData = {
     beforeMobileAltText: string
     afterAltText: string
   }[]
-  results: AnalyticCardProps[]
-  phases: Phase[]
-  review: ReviewProps
+  results?: AnalyticCardProps[]
+  phases?: Phase[]
+  review?: ReviewProps
 }
 
 export const gkpge: ProjectData = {

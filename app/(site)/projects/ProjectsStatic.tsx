@@ -6,7 +6,6 @@ import automedicsPreview from "@/app/images/automedics-preview-v2.webp"
 import entitledPreview from "@/app/images/entitled-preview-v2.webp"
 import IconSpritePreview from "@/app/images/zero-icon-sprite-preview.jpg"
 import zeroPreview from "@/app/images/react-zero-ui-preview.jpg"
-import vetsChoiceInsurancePreview from "@/images/vets-choice-insurance-preview.webp"
 import { Link } from "@/app/utils/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
@@ -48,18 +47,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     ariaLabel: "See Bespoke Website Build Case Study",
     isExternal: false,
   },
-  {
-    id: "vets-choice",
-    src: vetsChoiceInsurancePreview,
-    alt: "Vets Choice Insurance Preview",
-    color: "#DA961AA5",
-    type: "Pet Insurance Website",
-    text: "View Website",
-    href: externalLinks.vetsChoice,
-    dataText: "View Website",
-    ariaLabel: "View Vets Choice Insurance Website",
-    isExternal: true,
-  },
+
   {
     id: "zero-icon-sprite",
     src: IconSpritePreview,

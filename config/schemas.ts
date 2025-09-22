@@ -1,5 +1,14 @@
-import type { WithContext, CollectionPage, ProfilePage, BreadcrumbList } from "schema-dts"
+import type { WithContext, CollectionPage, ProfilePage, BreadcrumbList, WebPage } from "schema-dts"
 import { SITE_CONFIG, SITE_NAP, SITE_SLUGS, externalLinks } from "./siteConfig"
+import { gkpge, formBuilder, iao, type ProjectData } from "../app/data/project-data"
+
+interface ProjectItem {
+  name: string
+  url: string
+  date: string
+  description: string
+  isExternal: boolean
+}
 
 interface ProjectItem {
   name: string
@@ -12,62 +21,41 @@ interface ProjectItem {
 // Project data for schema
 const projectsData: ProjectItem[] = [
   {
-    name: "React Zero-UI",
-    url: externalLinks.zeroCore,
-    date: "2025-06-01",
-    description: "Zero Re-Render State Library",
+    name: "Orbitask",
+    url: externalLinks.orbitask,
+    date: "2025-09-01",
+    description: "Task Management Web App",
     isExternal: true,
   },
   {
-    name: "Bespoke Tint & PPF",
-    url: SITE_SLUGS.projectLinks.bespoke,
-    date: "2025-03-11",
-    description: "Automotive Styling Website",
+    name: gkpge.hero.title as string,
+    url: "/projects/gkpge",
+    date: `2021-01-01/${gkpge.hero.year.replace('-', '-01-01')}`,
+    description: "Created new reusable CMS theme and components for GKPGE Group",
     isExternal: false,
   },
   {
-    name: "Vets Choice Insurance",
-    url: externalLinks.vetsChoice,
-    date: "2025-05-20",
-    description: "Pet Insurance Website",
-    isExternal: true,
-  },
-  {
-    name: "Zero Icon Sprite",
-    url: externalLinks.zeroIconSprite,
-    date: "2024-06-15",
-    description: "SVG Build Tool",
-    isExternal: true,
-  },
-  {
-    name: "Automedics",
-    url: SITE_SLUGS.projectLinks.automedics,
-    date: "2024-12-02",
-    description: "Automotive Repair Website",
+    name: formBuilder.hero.title as string,
+    url: "/projects/form-builder",
+    date: `2021-01-01/${formBuilder.hero.year.replace('-', '-01-01')}`,
+    description: "GKPGE form builder tool for internal CMS",
     isExternal: false,
   },
   {
-    name: "Iron & Oak",
-    url: SITE_SLUGS.projectLinks.iao,
-    date: "2024-06-15",
-    description: "Private Security Website",
+    name: iao.hero.title as string,
+    url: "/projects/iao",
+    date: `2024-01-01/${iao.hero.year}-12-31`,
+    description: "Media Expert promotions landing pages",
     isExternal: false,
-  },
-  {
-    name: "Entitled",
-    url: externalLinks.entitled,
-    date: "2024-02-10",
-    description: "Event Management Web App",
-    isExternal: true,
   },
 ]
 
 export const projectsSchema: WithContext<CollectionPage> = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Projects - Austin Serb",
+  name: "Projects - Olaf Koziara",
   url: `${SITE_CONFIG.url}${SITE_SLUGS.projects}`,
-  about: "Projects and case studies by Austin Serb (Next.js, React, TypeScript).",
+  about: "Projects and case studies by Olaf Koziara (Next.js, React, TypeScript).",
   mainEntity: {
     "@type": "ItemList",
     itemListOrder: "Descending",
@@ -86,12 +74,12 @@ export const projectsSchema: WithContext<CollectionPage> = {
 export const profilePageSchema: WithContext<ProfilePage> = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  name: "About - Austin Serb",
+  name: "About - Olaf Koziara",
   url: `${SITE_CONFIG.url}/about`,
   mainEntity: {
     "@type": "Person",
-    "@id": `${SITE_CONFIG.url}/#austin`,
-    name: "Austin Serb",
+    "@id": `${SITE_CONFIG.url}/#olaf`,
+    name: "Olaf Koziara",
     url: SITE_CONFIG.url,
     jobTitle: "Full-Stack Engineer",
     email: SITE_NAP.email,
@@ -134,58 +122,35 @@ export const createProjectBreadcrumbSchema = (projectName: string, projectUrl: s
   ],
 })
 
-const projectBreadcrumbSchema: WithContext<BreadcrumbList> = {
+// Function to generate project page schema
+export const createProjectPageSchema = (project: ProjectData, projectSlug: string): WithContext<WebPage> => ({
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
+  "@type": "WebPage",
+  name: project.hero.title as string,
+  url: `${SITE_CONFIG.url}/projects/${projectSlug}`,
+  description: typeof project.hero.description === 'string' ? project.hero.description : "Project description",
+  mainEntity: {
+    "@type": "CreativeWork",
+    name: project.hero.title as string,
+    description: typeof project.hero.description === 'string' ? project.hero.description : "Project description",
+    creator: {
       "@type": "Person",
-      "@id": "https://serbyte.dev/#austin",
-      name: "Austin Serb",
+      name: "Olaf Koziara",
       url: SITE_CONFIG.url,
-      jobTitle: "Full-Stack Engineer",
-      image: { "@id": "https://serbyte.dev/#headshot" },
-      worksFor: { "@id": "https://serbyte.dev/#serbyte" },
-      sameAs: Object.values(SITE_NAP.profiles).map((profiles) => profiles),
-      contactPoint: [
-        {
-          "@type": "ContactPoint",
-          contactType: "Hiring",
-          email: SITE_NAP.email,
-          areaServed: "US",
-          availableLanguage: ["en"],
+    },
+    dateCreated: project.hero.year,
+    about: project.hero.categories,
+    url: project.hero.link || `${SITE_CONFIG.url}/projects/${projectSlug}`,
+    ...(project.review && {
+      review: {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: project.review.name,
         },
-      ],
-    },
-    {
-      "@type": "Organization",
-      "@id": `${SITE_CONFIG.url}#serbyte`,
-      name: "Serbyte Development",
-      url: SITE_CONFIG.url,
-      logo: { "@id": "https://serbyte.dev/#logo" },
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_CONFIG.url}#website`,
-      name: "Austin Serb - Developer Portfolio",
-      url: SITE_CONFIG.url,
-      publisher: { "@id": `${SITE_CONFIG.url}#austin` },
-      inLanguage: "en",
-    },
-    {
-      "@type": "ImageObject",
-      "@id": `${SITE_CONFIG.url}#headshot`,
-      url: `${SITE_CONFIG.url}/profile.webp`,
-    },
-    {
-      "@type": "ImageObject",
-      "@id": `${SITE_CONFIG.url}#logo`,
-      url: `${SITE_CONFIG.url}/serbyte-logo.png`,
-    },
-    {
-      "@type": "SiteNavigationElement",
-      name: ["Home", "Projects", "Contact"],
-      url: [SITE_CONFIG.url, `${SITE_CONFIG.url}${SITE_SLUGS.projects}`, `${SITE_CONFIG.url}${SITE_SLUGS.contact}`],
-    },
-  ],
-}
+        reviewBody: typeof project.review.quote === 'string' ? project.review.quote : "Client review",
+      },
+    }),
+  },
+})
+

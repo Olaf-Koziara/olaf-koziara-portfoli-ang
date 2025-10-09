@@ -6,6 +6,7 @@ import { Icon } from "./Icon"
 import { AnimatedH2 } from "./ui/AnimatedH2"
 
 const tech = [
+  { name: "Angular", src: "angular" },  
   { name: "React", src: "react" },
   { name: "Next", src: "next" },
   { name: "TypeScript", src: "typescript" },
@@ -20,7 +21,6 @@ const tech = [
 
 const services = [
   { name: "Full Stack Development", src: "magic-wand" },
-  { name: "React Development", src: "paint-bucket" },
   { name: "Performance Optimization", src: "web" },
   { name: "UI/UX Design", src: "world" },
   { name: "Code Reviews", src: "planet" },

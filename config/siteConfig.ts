@@ -2,10 +2,10 @@ export const DOMAIN_URL = "https://www.austinserb.com"
 
 export const SITE_CONFIG = {
   title: "Olaf Koziara",
-  description: "Portfolio of Olaf Koziara, Seattle-based full-stack engineer. Specializing in Next.js, React, TypeScript, and Tailwind CSS.",
+  description: "Portfolio of Olaf Koziara, Seattle-based full-stack engineer. Specializing in Angular, React, Next.js, TypeScript, and Tailwind CSS.",
   url: DOMAIN_URL ?? process.env.NEXT_PUBLIC_VERCEL_URL ?? "http://localhost:3000",
   siteName: "Olaf Koziara",
-  keywords: ["Olaf Koziara", "Serbyte", "React Zero-UI", "Next.js", "React", "TypeScript", "Full-Stack Engineer", "Seattle"],
+  keywords: ["Olaf Koziara", "Serbyte", "React Zero-UI", "Angular", "Next.js", "React", "TypeScript", "Full-Stack Engineer", "Seattle"],
   ogImage: "/assets/bg-home-poster-optimized.webp",
   logo: "/serbyte-logo.png",
 } as const

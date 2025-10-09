@@ -32,14 +32,14 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
               <Text as="h2" size="lg" className="font-medium">
                 Olaf Koziara
               </Text>
-              <p className="text-sm text-gray-500">Full-Stack Engineer (Next.js + TypeScript)</p>
+              <p className="text-sm text-gray-500">Full-Stack Engineer (Angular, React & Next.js + TypeScript)</p>
             </MotionDiv>
           </div>
           {/* ---------------- right column ---------------- */}
           <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-500">
             <p>
               <strong className="font-semibold text-slate-900">I am highly driven and passionate frontend JavaScript ES6+ engineer</strong> that loves learning
-              and finding new ways to gain and share expertise, knowledge and ideas.
+              and finding new ways to gain and share expertise, knowledge and ideas. Specialized in Angular, React and Next.js ecosystems.
             </p>
 
             <p>

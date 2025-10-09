@@ -55,7 +55,7 @@ export const projectsSchema: WithContext<CollectionPage> = {
   "@type": "CollectionPage",
   name: "Projects - Olaf Koziara",
   url: `${SITE_CONFIG.url}${SITE_SLUGS.projects}`,
-  about: "Projects and case studies by Olaf Koziara (Next.js, React, TypeScript).",
+  about: "Projects and case studies by Olaf Koziara (Angular, React, Next.js, TypeScript).",
   mainEntity: {
     "@type": "ItemList",
     itemListOrder: "Descending",

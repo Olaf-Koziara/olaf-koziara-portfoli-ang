@@ -215,8 +215,8 @@ export const formBuilder: ProjectData = {
     client: "PGE Systemy",
     year: "2021-2023",
     description:
-      "I worked at PGE Systemy as a frontend developer, where I built a form builder integrated into the company’s CMS platform designed for creating websites within the corporate group. Form builder panel itself was based on React with TypeScript and integrated with a Symfony/Twig backend. The form builder allowed users to create dynamic forms using drag and drop components such as containers, columns, inputs, and selects. It also supported setting dependencies between fields as well as defining custom submit actions. Once a form was created, its structure was exported as JSON and processed by the Symfony backend, which generated the form layout. On the client side, the javascript restored all dependencies, interactivity, and dynamic behaviors defined in the builder.",
-    categories: ["React", "TypeScript", "TWIG", "SCSS"],
+      "I worked at PGE Systemy as a frontend developer, where I built a form builder integrated into the company’s CMS platform designed for creating websites within the corporate group. Form builder panel itself was based on Angular with TypeScript and integrated with a Symfony/Twig backend. The form builder allowed users to create dynamic forms using drag and drop components such as containers, columns, inputs, and selects. It also supported setting dependencies between fields as well as defining custom submit actions. Once a form was created, its structure was exported as JSON and processed by the Symfony backend, which generated the form layout. On the client side I created the JavaScript that restored all dependencies, interactivity, and dynamic behaviors defined in the builder.",
+    categories: ["Angular", "TypeScript", "RxJS", "TWIG", "SCSS"],
   },
 
   phases: [

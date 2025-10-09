@@ -29,7 +29,7 @@ export const HeroV2 = () => {
 
           <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base">
             <strong className="font-semibold text-slate-900">Frontend-focused full stack developer.</strong> <br />
-            React & Next.js specialist.
+            Angular, React & Next.js specialist.
           </AnimatedElement>
 
           <CallToActionButton />

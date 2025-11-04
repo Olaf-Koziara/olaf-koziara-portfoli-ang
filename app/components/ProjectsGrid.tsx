@@ -25,10 +25,11 @@ export function ProjectsGrid({ className }: { className?: string }) {
   const { scrollYProgress } = useScroll({
     offset: isMobile ? ["start start", "10% start"] : ["start start", "15% start"],
   })
-  const stiffness = isMobile ? 120 : 220
-  const damping = isMobile ? 50 : 90
+  const stiffness = isMobile ? 260 : 360
+  const damping = isMobile ? 32 : 48
+  const mass = isMobile ? 0.25 : 0.35
 
-  const progress = useSpring(scrollYProgress, { stiffness, damping })
+  const progress = useSpring(scrollYProgress, { stiffness, damping, mass })
 
   const OFFSET_TUNING: Record<string, Partial<HeroOffset>> = {
     "orbitask-manager": { rot: 9, s: responsiveScale, dx: isMobile ? -220 : -30, dy: isMobile ? -120 : -40 },
@@ -69,8 +70,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
   return (
     <section id="projects-grid" className={clsx("relative scroll-mt-36", className)} ref={ref}>
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
-        
-                <AnimatedCard
+        <AnimatedCard
           key="gkpge"
           src={gkpgePreview}
           alt={"GkpgeCMS Preview"}
@@ -83,7 +83,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="/projects/gkpge"
           dataText="View Case Study"
         />
-            <AnimatedCard
+        <AnimatedCard
           key="formBuilder"
           src={formbuilderPreview}
           alt={"FormBuilder Preview"}
@@ -96,10 +96,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           progress={progress}
           dataText="View Case Study"
         />
-   
 
-
-    
         <AnimatedCard
           key={"mediaexpert"}
           src={mediaexpertPreview}
@@ -113,7 +110,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           progress={progress}
           dataText="View Case Study"
         />
-             <AnimatedCard
+        <AnimatedCard
           key={"orbitask-manager"}
           src={orbitaskPreview}
           alt={"Orbitask manager - Preview"}

@@ -37,8 +37,8 @@ export const RecruiterContact: React.FC = () => {
               <span className="text-slate-500">Let&apos;s chat.</span>
             </H3>
             <Text className="max-w-2xl text-center text-balance">
-              I build fast, accessible web apps with React, Node.js, and TypeScript. I&apos;m looking for teams that value product quality, performance, and
-              thoughtful UX.
+              I build fast, accessible web apps with React, Angular, Node.js, and TypeScript. I&apos;m looking for teams that value product quality,
+              performance, and thoughtful UX.
             </Text>
           </div>
 

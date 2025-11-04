@@ -7,7 +7,7 @@ import { RecruiterContact } from "../components/RecruiterContact"
 import { ServicesSectionV2 } from "../components/ServicesSectionV2"
 
 export const metadata: Metadata = {
-  title: "Web Developer Portfolio | Olaf Koziara | React & Next.js",
+  title: "Web Developer Portfolio | Olaf Koziara | Angular, React & Next.js",
   description:
     "Explore the web developer portfolio of Olaf Koziara, a full-stack engineer building fast, modern web applications. See what a professional coding portfolio looks like, featuring projects in React, Next.js, and the custom-built React-Zero-UI library.",
 
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "Serbyte",
     "React Zero-UI",
     "Next.js",
+    "Angular",
     "React",
     "TypeScript",
     "Full-Stack Engineer",

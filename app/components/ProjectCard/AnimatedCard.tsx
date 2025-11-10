@@ -32,7 +32,7 @@ export interface AnimatedCardProps {
 
 export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, dataText = "View Website ↗", href, target }: AnimatedCardProps) {
   const ref = useRef<HTMLDivElement>(null)
-  useCompositorSpring(ref, progress)
+  useCompositorSpring(ref, progress, { x: offset.x, y: offset.y, rot: offset.rot, s: offset.s })
   return (
     <Link
       data-text={dataText}
@@ -44,14 +44,6 @@ export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, 
     >
       <div
         ref={ref}
-        style={
-          {
-            "--tx": `${offset.x}px`,
-            "--ty": `${offset.y}px`,
-            "--rot": `${offset.rot}deg`,
-            "--sc": `${offset.s}`,
-          } as React.CSSProperties
-        }
         className={clsx("group relative h-full w-full transform-gpu opacity-1 will-change-[transform,opacity] contain-content backface-hidden")}
       >
         <Card src={src} alt={alt} color={color} type={type} text={dataText} />

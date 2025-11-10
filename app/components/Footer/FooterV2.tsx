@@ -22,7 +22,12 @@ export const socialLinks = [
 export const FooterV2: React.FC = () => {
   const { t } = useTranslation()
 
-  const words: [string, string, string, string] = ["build", "create", "design", "make"]
+  const words: [string, string, string, string] = [
+    t("footer.word1"),
+    t("footer.word2"),
+    t("footer.word3"),
+    t("footer.word4"),
+  ]
 
   return (
     <footer className="relative overflow-hidden bg-black">

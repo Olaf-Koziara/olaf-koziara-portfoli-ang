@@ -3,7 +3,8 @@
     "projects": "Projekty",
     "about": "O mnie",
     "contact": "Kontakt",
-    "brandName": "Olaf Koziara"
+    "brandName": "Olaf Koziara",
+    "toggleLanguage": "Przełącz język"
   },
   "hero": {
     "openToWork": "Otwarty na odważne projekty",
@@ -56,7 +57,11 @@
     "socials": "Sociale",
     "home": "Strona główna",
     "basedIn": "Lokalizacja",
-    "copyright": "© 2025 Olaf Koziara"
+    "copyright": "© 2025 Olaf Koziara",
+    "word1": "zbudujmy",
+    "word2": "stwórzmy",
+    "word3": "zaprojektujmy",
+    "word4": "zróbmy"
   },
   "project": {
     "client": "Klient",

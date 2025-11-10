@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "brandName": "Olaf Koziara"
+  },
+  "hero": {
+    "openToWork": "Open to audacious work",
+    "portfolio": "Portfolio",
+    "title": "Olaf Koziara",
+    "subtitle": "Frontend-focused full stack developer.",
+    "description": "Angular, React & Next.js specialist.",
+    "seeGithub": "See My Github"
+  },
+  "about": {
+    "title": "About",
+    "name": "Olaf Koziara",
+    "role": "Full-Stack Engineer (Angular, React & Next.js + TypeScript)",
+    "description1": "I am highly driven and passionate frontend JavaScript ES6+ engineer",
+    "description1Detail": "that loves learning and finding new ways to gain and share expertise, knowledge and ideas. Specialized in Angular, React and Next.js ecosystems.",
+    "description2": "I am writing clean and maintainable code, and providing great user experience.",
+    "description3": "My core philosophy is simplicity",
+    "description3Detail": "if complexity balloons, I delete it and design the simpler path."
+  },
+  "services": {
+    "title": "Engineering",
+    "subtitle": "Toolkit",
+    "techStack": "My tech stack",
+    "fullStack": "Full Stack Development",
+    "performance": "Performance Optimization",
+    "uiUx": "UI/UX Design",
+    "codeReviews": "Code Reviews",
+    "motion": "Advanced Motion"
+  },
+  "projects": {
+    "latestProjects": "Latest Projects",
+    "viewCaseStudy": "View Case Study",
+    "viewProject": "View Project",
+    "viewOnGitHub": "View on GitHub",
+    "viewWebsite": "View Website"
+  },
+  "contact": {
+    "title": "Building Something Amazing?",
+    "subtitle": "Let's chat.",
+    "description": "I build fast, accessible web apps with React, Angular, Node.js, and TypeScript. I'm looking for teams that value product quality, performance, and thoughtful UX.",
+    "emailMe": "Email me",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "fullStack": "Full-Stack - Frontend Focused"
+  },
+  "footer": {
+    "lets": "Lets",
+    "incredibleWorkTogether": "incredible work together.",
+    "email": "Email",
+    "socials": "Socials",
+    "home": "Home",
+    "basedIn": "Based in",
+    "copyright": "© 2025 Olaf Koziara"
+  },
+  "project": {
+    "client": "Client",
+    "year": "Year",
+    "scopeOfWork": "Scope of Work",
+    "viewLiveSite": "View Live Site",
+    "beforeAndAfter": "Before and after.",
+    "seeTheDifference": "See the difference.",
+    "beforeAfterDescription": "Use the slider to see the difference between the before and after."
+  }
+}

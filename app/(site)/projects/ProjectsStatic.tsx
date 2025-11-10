@@ -1,3 +1,5 @@
+"use client"
+
 import { StaticImageData } from "next/image"
 import { Card } from "@/app/components/ProjectCard/Card"
 import iaoPreview from "@/app/images/iao-preview-v2.webp"
@@ -8,6 +10,7 @@ import IconSpritePreview from "@/app/images/zero-icon-sprite-preview.jpg"
 import zeroPreview from "@/app/images/react-zero-ui-preview.jpg"
 import { Link } from "@/app/utils/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
+import { useTranslation } from "react-i18next"
 
 type StaticProject = {
   id: string
@@ -15,10 +18,8 @@ type StaticProject = {
   alt: string
   color: string
   type: string
-  text: string
+  textKey: string
   href: string
-  dataText: string
-  ariaLabel: string
   isExternal: boolean
 }
 
@@ -29,10 +30,8 @@ export const STATIC_PROJECTS: StaticProject[] = [
     alt: "React-Zero-UI - Preview",
     color: "#3B06D1",
     type: "Zero Re-Render State Library",
-    text: "View on GitHub",
+    textKey: "projects.viewOnGitHub",
     href: externalLinks.zeroCore,
-    dataText: "View on GitHub",
-    ariaLabel: "View React Zero UI on GitHub",
     isExternal: true,
   },
   {
@@ -41,10 +40,8 @@ export const STATIC_PROJECTS: StaticProject[] = [
     alt: "Bespoke Preview",
     color: "#024EFC",
     type: "Automotive Styling Website",
-    text: "See Case Study",
+    textKey: "projects.viewCaseStudy",
     href: SITE_SLUGS.projectLinks.bespoke,
-    dataText: "See Case Study",
-    ariaLabel: "See Bespoke Website Build Case Study",
     isExternal: false,
   },
 
@@ -54,10 +51,8 @@ export const STATIC_PROJECTS: StaticProject[] = [
     alt: "Zero-Icon-Sprite Preview",
     color: "#3B06D1A5",
     type: "SVG Build Tool",
-    text: "View on GitHub",
+    textKey: "projects.viewOnGitHub",
     href: externalLinks.zeroIconSprite,
-    dataText: "View on GitHub",
-    ariaLabel: "View React Zero UI Icon Sprite on GitHub",
     isExternal: true,
   },
 
@@ -67,10 +62,8 @@ export const STATIC_PROJECTS: StaticProject[] = [
     alt: "Automedics Preview",
     color: "#000000",
     type: "Automotive Repair Website",
-    text: "See Case Study",
+    textKey: "projects.viewCaseStudy",
     href: SITE_SLUGS.projectLinks.automedics,
-    dataText: "See Case Study",
-    ariaLabel: "See Automedics Website Build Case Study",
     isExternal: false,
   },
 
@@ -80,10 +73,8 @@ export const STATIC_PROJECTS: StaticProject[] = [
     alt: "IAO Preview",
     color: "#13739C",
     type: "Private Security Website",
-    text: "See Case Study",
+    textKey: "projects.viewCaseStudy",
     href: SITE_SLUGS.projectLinks.iao,
-    dataText: "See Case Study",
-    ariaLabel: "See Iron & Oak Website Build Case Study",
     isExternal: false,
   },
   {
@@ -92,39 +83,40 @@ export const STATIC_PROJECTS: StaticProject[] = [
     alt: "Entitled Preview",
     color: "#DA961AA5",
     type: "Event Management Web App",
-    text: "View Website",
+    textKey: "projects.viewWebsite",
     href: externalLinks.entitled,
-    dataText: "View Website",
-    ariaLabel: "View Entitled Website",
     isExternal: true,
   },
 ]
 
 export const ProjectsStatic: React.FC = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="border-t border-slate-200">
       <div className="inside-container-small">
         <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
           {STATIC_PROJECTS.map((project) => {
             const ProjectWrapper = project.isExternal ? "a" : Link
+            const translatedText = t(project.textKey)
             const wrapperProps = project.isExternal
               ? {
                   href: project.href,
                   target: "_blank",
                   rel: "noopener",
-                  "data-text": project.dataText,
-                  "aria-label": project.ariaLabel,
+                  "data-text": translatedText,
+                  "aria-label": translatedText,
                 }
               : {
                   href: project.href,
-                  "data-text": project.dataText,
-                  "aria-label": project.ariaLabel,
+                  "data-text": translatedText,
+                  "aria-label": translatedText,
                   prefetch: true,
                 }
 
             return (
               <ProjectWrapper key={project.id} {...wrapperProps}>
-                <Card src={project.src} alt={project.alt} color={project.color} type={project.type} reveal={false} text={project.text} />
+                <Card src={project.src} alt={project.alt} color={project.color} type={project.type} reveal={false} text={translatedText} />
               </ProjectWrapper>
             )
           })}

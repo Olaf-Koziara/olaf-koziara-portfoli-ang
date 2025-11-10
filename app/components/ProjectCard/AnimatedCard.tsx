@@ -32,7 +32,7 @@ export interface AnimatedCardProps {
 
 export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, dataText = "View Website ↗", href, target }: AnimatedCardProps) {
   const ref = useRef<HTMLDivElement>(null)
-  useCompositorSpring(ref, progress, offset)
+  useCompositorSpring(ref, progress, { x: offset.x, y: offset.y, rot: offset.rot, s: offset.s })
   return (
     <Link
       data-text={dataText}

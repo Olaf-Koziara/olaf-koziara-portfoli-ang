@@ -2,26 +2,47 @@ import { MotionValue } from "motion/react"
 import { type RefObject } from "react"
 import { useIsoMorphicEffect } from "./useIsoMorphicEffect"
 
-export function useCompositorSpring(ref: RefObject<HTMLElement | null>, progress: MotionValue<number>) {
+type TransformConfig = {
+  x?: number
+  y?: number
+  rot?: number
+  s?: number
+}
+
+export function useCompositorSpring(ref: RefObject<HTMLElement | null>, progress: MotionValue<number>, config: TransformConfig) {
   useIsoMorphicEffect(() => {
     const el = ref.current
     if (!el) return
+    const { x = 0, y = 0, rot = 0, s = 1 } = config ?? {}
+    const initialTransform = `translate3d(${x}px, ${y}px, 0) scale(${s}) rotate(${rot}deg)`
+    const finalTransform = "translate3d(0px, 0px, 0) scale(1) rotate(0deg)"
+
     el.style.opacity = "1"
-    /* Create a paused compositor animation ------------------- */
+    el.style.transform = initialTransform
+
     const anim = el.animate(
       [
         {
-          transform: `translate3d(var(--tx, 0), var(--ty, 0), 0) scale(var(--sc, 1)) rotate(var(--rot, 0))`,
+          transform: initialTransform,
         },
-        { transform: "translate3d(0, 0, 0) scale(1) rotate(0)" },
+        { transform: finalTransform },
       ],
       { duration: 1000, fill: "both", easing: "ease-out" }
     )
-    anim.pause() // we'll scrub it manually
-    const total = anim.effect!.getComputedTiming().endTime // 1000 ms
+    anim.pause()
+    const total = anim.effect?.getComputedTiming().endTime ?? 1000
 
-    /* Spring drives only .currentTime ------------------------ */
-    const unsubscribe = progress.on("change", (p) => (anim.currentTime = p * Number(total)))
-    return () => unsubscribe()
-  }, [progress])
+    const update = (p: number) => {
+      anim.currentTime = p * Number(total)
+    }
+
+    update(progress.get())
+    const unsubscribe = progress.on("change", update)
+
+    return () => {
+      unsubscribe()
+      anim.cancel()
+      el.style.transform = ""
+    }
+  }, [progress, config?.x, config?.y, config?.rot, config?.s])
 }

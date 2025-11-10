@@ -3,7 +3,7 @@
 import { useTranslation } from "react-i18next"
 
 export const LanguageSwitcher: React.FC = () => {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   const currentLang = i18n.language.split("-")[0]
   const isEnglish = currentLang === "en"
@@ -18,7 +18,7 @@ export const LanguageSwitcher: React.FC = () => {
       type="button"
       onClick={toggleLanguage}
       className="bubble-hover rounded-full border border-gray-200 px-3 py-1 font-medium shadow-md duration-300 hover:translate-y-0.5 hover:border-white hover:shadow-none"
-      aria-label="Toggle language"
+      aria-label={t("nav.toggleLanguage")}
     >
       {currentLang.toUpperCase()}
     </button>

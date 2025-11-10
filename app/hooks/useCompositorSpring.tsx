@@ -13,7 +13,7 @@ export function useCompositorSpring(ref: RefObject<HTMLElement | null>, progress
   useIsoMorphicEffect(() => {
     const el = ref.current
     if (!el) return
-    const { x = 0, y = 0, rot = 0, s = 1 } = config ?? {}
+    const { x = 0, y = 0, rot = 0, s = 1 } = config
     const initialTransform = `translate3d(${x}px, ${y}px, 0) scale(${s}) rotate(${rot}deg)`
     const finalTransform = "translate3d(0px, 0px, 0) scale(1) rotate(0deg)"
 
@@ -44,5 +44,5 @@ export function useCompositorSpring(ref: RefObject<HTMLElement | null>, progress
       anim.cancel()
       el.style.transform = ""
     }
-  }, [progress, config?.x, config?.y, config?.rot, config?.s])
+  }, [progress, config])
 }

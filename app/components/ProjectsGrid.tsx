@@ -8,6 +8,7 @@ import { useUI } from "@react-zero-ui/core"
 import clsx from "clsx"
 import { useScroll, useSpring } from "motion/react"
 import { useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import { useIsMobile } from "../hooks/useMediaQuery"
 import { useOffset } from "../hooks/useOffset"
 import { AnimatedCard, HeroOffset } from "./ProjectCard/AnimatedCard"
@@ -15,6 +16,7 @@ import { AnimatedCard, HeroOffset } from "./ProjectCard/AnimatedCard"
 const ids = ["mediaexpert", "orbitask-manager", "formbuilder", "gkpge"]
 
 export function ProjectsGrid({ className }: { className?: string }) {
+  const { t } = useTranslation()
   const ref = useRef<HTMLDivElement>(null)
   const rawOffsets = useOffset(ids)
   const isMobile = useIsMobile()
@@ -81,7 +83,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           progress={progress}
           target="_self"
           href="/projects/gkpge"
-          dataText="View Case Study"
+          dataText={t("projects.viewCaseStudy")}
         />
         <AnimatedCard
           key="formBuilder"
@@ -94,7 +96,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="/projects/formbuilder"
           target="_self"
           progress={progress}
-          dataText="View Case Study"
+          dataText={t("projects.viewCaseStudy")}
         />
 
         <AnimatedCard
@@ -108,7 +110,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="/projects/mediaexpert"
           target="_self"
           progress={progress}
-          dataText="View Case Study"
+          dataText={t("projects.viewCaseStudy")}
         />
         <AnimatedCard
           key={"orbitask-manager"}
@@ -120,7 +122,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           type=""
           progress={progress}
           href={externalLinks.orbitask}
-          dataText="View on GitHub"
+          dataText={t("projects.viewOnGitHub")}
         />
       </div>
     </section>

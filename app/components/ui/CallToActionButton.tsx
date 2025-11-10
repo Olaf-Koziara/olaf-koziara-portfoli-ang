@@ -1,3 +1,5 @@
+"use client"
+
 import { MotionButton, MotionDiv } from "@/app/utils/lazy-ui"
 import { SITE_NAP } from "@/config/siteConfig"
 import clsx from "clsx"
@@ -5,8 +7,10 @@ import type { Variants } from "motion"
 import Image from "next/image"
 import profilePhoto from "../../images/profile.jpg"
 import { Icon } from "../Icon"
+import { useTranslation } from "react-i18next"
 
 export const CallToActionButton = () => {
+  const { t } = useTranslation()
   const buttonVariants: Variants = {
     initial: {
       opacity: 0,
@@ -83,7 +87,7 @@ export const CallToActionButton = () => {
             />
           </MotionDiv>
         </div>
-        See My Github
+        {t("hero.seeGithub")}
       </MotionButton>
     </a>
   )

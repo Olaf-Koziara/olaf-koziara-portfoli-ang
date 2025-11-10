@@ -1,14 +1,19 @@
+"use client"
+
 import profilePhoto from "@/app/images/profile.jpg"
 import { H3, Text } from "@/app/ui/Elements"
 import { MotionDiv } from "@/app/utils/lazy-ui"
 import { SITE_NAP } from "@/config/siteConfig"
 import { Mail } from "@react-zero-ui/icon-sprite"
 import Image from "next/image"
+import { useTranslation } from "react-i18next"
 import { Icon } from "./Icon"
 import { BlackButtonLink } from "./ui/BlackButtonLink"
 import { WhiteButtonLink } from "./ui/WhiteButtonLink"
 
 export const RecruiterContact: React.FC = () => {
+  const { t } = useTranslation()
+
   return (
     <section id="contact" className="scroll-mt-20 border-t border-gray-200">
       <div className="inside-container-small">
@@ -21,40 +26,37 @@ export const RecruiterContact: React.FC = () => {
         >
           <div className="flex w-fit items-center gap-3 p-2 max-lg:justify-center">
             <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-slate-200">
-              <Image src={profilePhoto} alt="Olaf Koziara" fill sizes="80px" className="object-cover" />
+              <Image src={profilePhoto} alt={t("contact.fullStack")} fill sizes="80px" className="object-cover" />
             </div>
             <div className="flex flex-col items-start text-sm whitespace-nowrap text-slate-700">
-              <h2 className="font-medium text-slate-900">Olaf Koziara</h2>
-              <p className="text-slate-500">Full-Stack - Frontend Focused</p>
+              <h2 className="font-medium text-slate-900">{t("nav.brandName")}</h2>
+              <p className="text-slate-500">{t("contact.fullStack")}</p>
             </div>
           </div>
 
           <div className="flex flex-col items-center gap-4 max-lg:items-center">
             <H3 className="text-center font-normal tracking-tight">
               <span>
-                Building Something Amazing? <br />
+                {t("contact.title")} <br />
               </span>
-              <span className="text-slate-500">Let&apos;s chat.</span>
+              <span className="text-slate-500">{t("contact.subtitle")}</span>
             </H3>
-            <Text className="max-w-2xl text-center text-balance">
-              I build fast, accessible web apps with React, Angular, Node.js, and TypeScript. I&apos;m looking for teams that value product quality,
-              performance, and thoughtful UX.
-            </Text>
+            <Text className="max-w-2xl text-center text-balance">{t("contact.description")}</Text>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 max-lg:justify-center">
             <BlackButtonLink href={`mailto:${SITE_NAP.email}`}>
               <Mail height={18} width={18} className="h-[18px] w-[18px] text-white" />
-              Email me
+              {t("contact.emailMe")}
             </BlackButtonLink>
 
             <WhiteButtonLink href={SITE_NAP.profiles.linkedIn}>
               <Icon name="linkedin" height={18} width={18} className="h-[18px] w-[18px]" />
-              LinkedIn
+              {t("contact.linkedin")}
             </WhiteButtonLink>
             <WhiteButtonLink href={SITE_NAP.profiles.github}>
               <Icon name="github" height={18} width={18} className="h-[18px] w-[18px]" />
-              GitHub
+              {t("contact.github")}
             </WhiteButtonLink>
           </div>
 

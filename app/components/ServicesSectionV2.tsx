@@ -1,9 +1,12 @@
+"use client"
+
 import clsx from "clsx"
 import type { Variants } from "motion"
 import { Text } from "../ui/Elements"
 import { MotionLi, MotionUl } from "../utils/lazy-ui"
 import { Icon } from "./Icon"
 import { AnimatedH2 } from "./ui/AnimatedH2"
+import { useTranslation } from "react-i18next"
 
 const tech = [
   { name: "Angular", src: "angular" },  
@@ -17,14 +20,6 @@ const tech = [
   { name: "PostgreSQL", src: "postgresql" },
   { name: "Figma", src: "figma" },
   { name: "Motion", src: "motion" },
-]
-
-const services = [
-  { name: "Full Stack Development", src: "magic-wand" },
-  { name: "Performance Optimization", src: "web" },
-  { name: "UI/UX Design", src: "world" },
-  { name: "Code Reviews", src: "planet" },
-  { name: "Advanced Motion", src: "cube" },
 ]
 
 const container: Variants = {
@@ -77,6 +72,16 @@ const element2: Variants = {
   },
 }
 export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: string }) => {
+  const { t } = useTranslation()
+
+  const services = [
+    { nameKey: "services.fullStack", src: "magic-wand" },
+    { nameKey: "services.performance", src: "web" },
+    { nameKey: "services.uiUx", src: "world" },
+    { nameKey: "services.codeReviews", src: "planet" },
+    { nameKey: "services.motion", src: "cube" },
+  ]
+
   return (
     <section
       id="technologies"
@@ -85,17 +90,15 @@ export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: st
         className
       )}
     >
-      {/*  LEFT COLUMN  */}
       <div className="flex h-full flex-col gap-16 max-md:w-full md:[flex:2_0_0px]">
         <AnimatedH2>
-          Engineering <br />
-          <span className="text-slate-500">Toolkit</span>
+          {t("services.title")} <br />
+          <span className="text-slate-500">{t("services.subtitle")}</span>
         </AnimatedH2>
 
-        {/* Tech Stack */}
         <div className="w-full">
           <Text size="base" className="mb-8">
-            My tech stack
+            {t("services.techStack")}
           </Text>
 
           <MotionUl
@@ -127,7 +130,6 @@ export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: st
         </div>
       </div>
 
-      {/*  RIGHT COLUMN  */}
       <MotionUl
         initial="hidden"
         whileInView="visible"
@@ -135,13 +137,13 @@ export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: st
         variants={container2}
         className="grid [flex:1_0_0px] grid-cols-2 gap-8 md:grid-cols-1"
       >
-        {services.map(({ name, src }) => (
-          <MotionLi key={name} variants={element2} className="flex items-center gap-3">
+        {services.map(({ nameKey, src }) => (
+          <MotionLi key={nameKey} variants={element2} className="flex items-center gap-3">
             <span className="button-shadow flex aspect-square h-10 w-10 items-center justify-center rounded-full bg-black">
               <Icon name={src} width={25} height={30} className="object-contain invert" />
             </span>
             <Text as="span" size="sm">
-              {name}
+              {t(nameKey)}
             </Text>
           </MotionLi>
         ))}

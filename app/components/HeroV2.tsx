@@ -1,9 +1,14 @@
+"use client"
+
 import { HeroScrollClick } from "./HeroScrollClick"
 import { ActivityDot } from "./ui/ActivityDot"
 import { AnimatedElement } from "./ui/AnimatedElement"
 import { CallToActionButton } from "./ui/CallToActionButton"
+import { useTranslation } from "react-i18next"
 
 export const HeroV2 = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="mx-auto max-w-6xl pt-25 sm:pt-28 md:pt-32">
       <div className="inside relative flex [flex:1.5_0_0px] px-5.5 pb-12 md:px-11 md:pb-24">
@@ -13,32 +18,30 @@ export const HeroV2 = () => {
             delay={0.6}
             className="frosted-glass z-2 inline-flex items-center gap-2 self-start rounded-full px-3 py-2 text-xs font-medium shadow-lg"
           >
-            <ActivityDot /> Open to audacious work
+            <ActivityDot /> {t("hero.openToWork")}
           </AnimatedElement>
 
           <h1 className="xs:text-5xl relative z-5 text-4xl leading-[1] font-medium tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
             <AnimatedElement element="span" offsetPx={20} fadeDirection="left" className="inline-block">
-              Olaf Koziara
+              {t("hero.title")}
             </AnimatedElement>{" "}
             <br />
             <AnimatedElement element="span" offsetPx={40} delay={0.2} fadeDirection="top" className="inline-block"></AnimatedElement>
             <AnimatedElement element="span" delay={0.4} offsetPx={20} fadeDirection="left" className="inline-block text-slate-700">
-              Portfolio
+              {t("hero.portfolio")}
             </AnimatedElement>
           </h1>
 
           <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base">
-            <strong className="font-semibold text-slate-900">Frontend-focused full stack developer.</strong> <br />
-            Angular, React & Next.js specialist.
+            <strong className="font-semibold text-slate-900">{t("hero.subtitle")}</strong> <br />
+            {t("hero.description")}
           </AnimatedElement>
 
           <CallToActionButton />
         </div>
-        {/* Don't remove this span */}
         <span data-stack-target-id className="xs:ml-[8%] [flex:1 _0_0px] xs:mt-20 mt-24 ml-[4%] h-1 w-2 sm:mt-11 xl:ml-[16%]" />
         <HeroScrollClick />
 
-        {/* subtle background ellipse */}
         <div className="pointer-events-none absolute inset-y-0 left-1/3 -z-1 hidden w-full bg-radial from-indigo-100/80 via-blue-50/40 to-transparent blur-3xl md:block" />
         <div className="pointer-events-none absolute inset-0 -z-2 bg-gradient-to-br from-white via-blue-50/20 to-indigo-50/30" />
       </div>

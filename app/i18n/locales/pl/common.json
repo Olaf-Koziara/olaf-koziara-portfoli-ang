@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "projects": "Projekty",
+    "about": "O mnie",
+    "contact": "Kontakt",
+    "brandName": "Olaf Koziara",
+    "toggleLanguage": "Przełącz język"
+  },
+  "hero": {
+    "openToWork": "Otwarty na odważne projekty",
+    "portfolio": "Portfolio",
+    "title": "Olaf Koziara",
+    "subtitle": "Full stack developer skupiony na frontendzie.",
+    "description": "Specjalista Angular, React & Next.js.",
+    "seeGithub": "Zobacz Mój Github"
+  },
+  "about": {
+    "title": "O mnie",
+    "name": "Olaf Koziara",
+    "role": "Inżynier Full-Stack (Angular, React & Next.js + TypeScript)",
+    "description1": "Jestem bardzo zmotywowanym i pełnym pasji inżynierem JavaScript ES6+ frontendowym",
+    "description1Detail": "który uwielbia uczyć się i znajdować nowe sposoby na zdobywanie i dzielenie się wiedzą, ekspertyzą i pomysłami. Specjalizuję się w ekosystemach Angular, React i Next.js.",
+    "description2": "Piszę czysty i łatwy w utrzymaniu kod oraz zapewniam doskonałe doświadczenie użytkownika.",
+    "description3": "Moja podstawowa filozofia to prostota",
+    "description3Detail": "jeśli złożoność rośnie, usuwam ją i projektuję prostszą ścieżkę."
+  },
+  "services": {
+    "title": "Narzędzia",
+    "subtitle": "Inżynierskie",
+    "techStack": "Mój stack technologiczny",
+    "fullStack": "Rozwój Full Stack",
+    "performance": "Optymalizacja wydajności",
+    "uiUx": "Projektowanie UI/UX",
+    "codeReviews": "Przeglądy kodu",
+    "motion": "Zaawansowana animacja"
+  },
+  "projects": {
+    "latestProjects": "Najnowsze Projekty",
+    "viewCaseStudy": "Zobacz studium przypadku",
+    "viewProject": "Zobacz projekt",
+    "viewOnGitHub": "Zobacz na GitHub",
+    "viewWebsite": "Zobacz stronę"
+  },
+  "contact": {
+    "title": "Budujesz Coś Niesamowitego?",
+    "subtitle": "Porozmawiajmy.",
+    "description": "Tworzę szybkie, dostępne aplikacje internetowe w React, Angular, Node.js i TypeScript. Szukam zespołów, które cenią jakość produktu, wydajność i przemyślane UX.",
+    "emailMe": "Wyślij email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "fullStack": "Full-Stack - Skupiony na Frontendzie"
+  },
+  "footer": {
+    "lets": "Stwórzmy",
+    "incredibleWorkTogether": "niesamowitą pracę razem.",
+    "email": "Email",
+    "socials": "Sociale",
+    "home": "Strona główna",
+    "basedIn": "Lokalizacja",
+    "copyright": "© 2025 Olaf Koziara",
+    "word1": "zbudujmy",
+    "word2": "stwórzmy",
+    "word3": "zaprojektujmy",
+    "word4": "zróbmy"
+  },
+  "project": {
+    "client": "Klient",
+    "year": "Rok",
+    "scopeOfWork": "Zakres pracy",
+    "viewLiveSite": "Zobacz żywą stronę",
+    "beforeAndAfter": "Przed i po.",
+    "seeTheDifference": "Zobacz różnicę.",
+    "beforeAfterDescription": "Użyj suwaka, aby zobaczyć różnicę między stanem przed i po."
+  }
+}
